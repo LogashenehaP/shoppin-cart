@@ -57,7 +57,7 @@ let c=0;
           CardItemDetails.filter((product) =>
             product.productName.toLowerCase().includes(text.toLowerCase())
           ).map((product) => {
-            c=1;
+      
             return (
               <div key={product.id}>
                 <SearchDisplay

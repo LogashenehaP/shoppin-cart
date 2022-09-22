@@ -5,7 +5,7 @@ import {
   ParaTag,
   HeadingTag,
 } from "./styles";
-
+import React from "react";
 import { FaStar } from "react-icons/fa";
 interface AppProps {
   name: string;
@@ -15,7 +15,13 @@ interface AppProps {
   image: string;
 }
 
-function SearchDisplay({ name, brand, price, rating, image }: AppProps) {
+const SearchDisplay: React.FC<AppProps> = ({
+  name,
+  brand,
+  price,
+  rating,
+  image,
+}: AppProps) => {
   return (
     <IndividualCard>
       <ImageWrapper>
@@ -29,5 +35,5 @@ function SearchDisplay({ name, brand, price, rating, image }: AppProps) {
       </ParaTag>
     </IndividualCard>
   );
-}
+};
 export default SearchDisplay;
