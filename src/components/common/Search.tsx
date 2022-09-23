@@ -1,6 +1,5 @@
-import CardItemDetails from "./CardItemDetails";
-import React from "react";
-import SearchDisplay from "./SearchDisplay";
+import CardItemDetails from './CardItemDetails';
+import SearchDisplay from './SearchDisplay';
 
 import {
   Input,
@@ -12,33 +11,20 @@ import {
   Container,
 } from './styles';
 
-import {sortSpace, filterSpace, productDetails } from "../../resources/String";
-import { FaSearch, FaSort, FaFilter } from "react-icons/fa";
+import { sortSpace, filterSpace, productDetails } from '../../resources/String';
+import { FaSearch, FaSort, FaFilter } from 'react-icons/fa';
 
 export const Search: React.FC = () => {
-  const [text, setText] = React.useState("");
+  const [text, setText] = React.useState('');
 
-  //   const [productList, setProductList] = React.useState<
-  //     | {
-  //         productId: number;
-  //         productName: string;
-  //         isFeatured: boolean;
-  //         productBrand: string;
-  //         productRating: number;
-  //         productImage?: String;
-  //         productPrice: Number;
-  //       }[]
-  //     | undefined
-  //   >(CardItemDetails);
-let c=0;
   return (
     <>
       <Container>
         <FilterDivison>
           <SearchSpace>
             <Input
-              type="text"
-              placeholder="Search Product"
+              type='text'
+              placeholder="Search Product'
               onChange={(e) => setText(e.target.value)}
             ></Input>
             <FaSearch />
@@ -53,15 +39,12 @@ let c=0;
           </FilterSpace>
         </FilterDivison>
         <CardItem>
-          {
-          CardItemDetails.filter((product) =>
+          {CardItemDetails.filter((product) =>
             product.productName.toLowerCase().includes(text.toLowerCase())
           ).map((product) => {
-      
             return (
               <div key={product.id}>
                 <SearchDisplay
-   
                   name={product?.productName}
                   brand={product?.productBrand}
                   price={product?.productPrice}
@@ -70,21 +53,9 @@ let c=0;
                 />
               </div>
             );
-            
-          }
-         )
-  
-       
-          }
-          
-       
+          })}
         </CardItem>
-       
       </Container>
-     
-      
-    
-     
     </>
   );
 };
